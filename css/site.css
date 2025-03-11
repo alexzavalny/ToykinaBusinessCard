@@ -17,6 +17,17 @@ ul {
     padding-inline-start: 0;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 100px;
+    display: block;
+}
+
 .profile-image {
     max-width: 250px;
     display: block;

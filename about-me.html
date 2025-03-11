@@ -1,351 +1,435 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-Z4QLHWXK9X"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4QLHWXK9X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+            gtag("config", "G-Z4QLHWXK9X");
+        </script>
+        <script
+            async
+            data-id="101410859"
+            src="//static.getclicky.com/js"
+        ></script>
 
-    gtag('config', 'G-Z4QLHWXK9X');
-  </script>
-  <script async data-id="101410859" src="//static.getclicky.com/js"></script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ксения Тоечкина - обо мне</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Merriweather:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ксения Тоечкина - обо мне</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Merriweather:wght@300;400&display=swap"
-    rel="stylesheet">
+        <style>
+            body {
+                font-family: "Roboto", sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+            h1,
+            h2,
+            h3,
+            p {
+                font-family: "Merriweather", serif;
+            }
+            ul {
+                padding-inline-start: 0;
+            }
 
-    h1,
-    h2,
-    h3,
-    p {
-      font-family: 'Merriweather', serif;
-    }
-    ul { 
-      padding-inline-start: 0;
-    }
+            .profile-image {
+                max-width: 250px;
+                display: block;
+            }
 
-    .profile-image {
-      max-width: 250px;
-      display: block;
-    }
+            .profile-image-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* ... ваши другие стили... */
+            }
 
-    .profile-image-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* ... ваши другие стили... */
-    }
+            .hero {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+            .hero-text {
+                text-align: center;
+                max-width: 500px;
+            }
 
-    .hero-text {
-      text-align: center;
-      max-width: 500px;
-    }
+            .about,
+            .consultation,
+            .testimonials {
+                padding: 10px 50px;
+                text-align: center;
+            }
 
-    .about,
-    .consultation,
-    .testimonials {
-      padding: 10px 50px;
-      text-align: center;
-    }
+            .consultation-button {
+                margin-top: 30px;
+                padding: 10px 20px;
+                border: none;
+                background-color: #f44336;
+                color: white;
+                font-size: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
 
-    .consultation-button {
-      margin-top: 30px;
-      padding: 10px 20px;
-      border: none;
-      background-color: #f44336;
-      color: white;
-      font-size: 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+            .consultation-button:hover {
+                background-color: #e33025;
+            }
 
-    .consultation-button:hover {
-      background-color: #e33025;
-    }
+            .contacts {
+                color: #373737;
+                padding: 2rem 0;
+                text-align: center;
+                background-image: url("/img/low_background.jpg");
+                background-size: cover; /* Покрывает всю область контейнера, может обрезать изображение */
+                background-repeat: no-repeat; /* Изображение не повторяется */
+                background-position: center; /* Центрирует изображение */
+                padding-bottom: 70px;
+            }
 
-    .contacts {
-      color: #373737;
-      padding: 2rem 0;
-      text-align: center;
-      background-image: url('low_background.jpg');
-      background-size: cover; /* Покрывает всю область контейнера, может обрезать изображение */
-      background-repeat: no-repeat; /* Изображение не повторяется */
-      background-position: center; /* Центрирует изображение */
-      padding-bottom: 70px;
-    }
+            .contacts a {
+                color: #373737;
+                text-decoration: none;
+            }
 
-    .contacts a {
-      color: #373737;
-      text-decoration: none;
-    }
+            .management {
+                margin: 0 4rem;
+                padding: 20px;
+                text-align: center;
+                background: linear-gradient(160deg, #fff4ba, #fffdf6);
+                border: 2px solid #ffd700;
+                border-radius: 5px;
+            }
 
-    .management {
-      margin: 0 4rem;
-      padding: 20px;
-      text-align: center;
-      background: linear-gradient(160deg, #fff4ba, #fffdf6);
-      border: 2px solid #ffd700;
-      border-radius: 5px;
-    }
+            .management h2 {
+                color: rgb(97, 82, 0);
+            }
 
-    .management h2 {
-      color: rgb(97, 82, 0);
-    }
+            .stats {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                padding: 40px;
+                margin: 40px 0 0 0;
+                text-align: center;
+                background-color: #f0f0f0;
+                background-image: url("/img/upper_background.jpg");
+                background-size: cover; /* Покрывает всю область контейнера, может обрезать изображение */
+                background-repeat: no-repeat; /* Изображение не повторяется */
+                background-position: center; /* Центрирует изображение */
+            }
 
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 40px;
-      margin: 40px 0 0 0;
-      text-align: center;
-      background-color: #f0f0f0;
-      background-image: url('upper_background.jpg');
-      background-size: cover; /* Покрывает всю область контейнера, может обрезать изображение */
-      background-repeat: no-repeat; /* Изображение не повторяется */
-      background-position: center; /* Центрирует изображение */
-    }
+            .stats-number {
+                font-size: 60px;
+                color: #007bff;
+                font-weight: bold;
+                margin: 0;
+            }
 
-    .stats-number {
-      font-size: 60px;
-      color: #007BFF;
-      font-weight: bold;
-      margin:0;
-    }
+            .stats-label {
+                font-size: 18px;
+                color: #333;
+            }
 
-    .stats-label {
-      font-size: 18px;
-      color: #333;
-    }
+            /* Это будет работать для экранов размером меньше 600px */
+            @media (max-width: 600px) {
+                .stats {
+                    flex-direction: column;
+                }
 
-    /* Это будет работать для экранов размером меньше 600px */
-    @media (max-width: 600px) {
-      .stats {
-        flex-direction: column;
-      }
+                .stats > div {
+                    margin-bottom: 20px;
+                }
 
-      .stats>div {
-        margin-bottom: 20px;
-      }
+                .about,
+                .consultation,
+                .testimonials {
+                    padding: 10px 10px;
+                }
 
-      .about,
-      .consultation,
-      .testimonials {
-        padding: 10px 10px;
-      }
+                .management {
+                    margin: 0 1rem;
+                }
+            }
 
-      .management {
-        margin: 0 1rem;
-      }
-    }
+            .faq-section {
+                background: #f9f9f9;
+                /* Подложка с серым фоном */
+                padding: 40px;
+                /* Внутренние отступы для большего пространства */
+                margin: 40px 0;
+                /* Внешние отступы для отделения от других блоков */
+                border-radius: 15px;
+                /* Скругление углов */
+            }
 
-    .faq-section {
-      background: #f9f9f9;
-      /* Подложка с серым фоном */
-      padding: 40px;
-      /* Внутренние отступы для большего пространства */
-      margin: 40px 0;
-      /* Внешние отступы для отделения от других блоков */
-      border-radius: 15px;
-      /* Скругление углов */
-    }
+            .faq-section dt {
+                font-weight: 700;
+                /* Сделаем вопросы жирными */
+                margin-top: 20px;
+                /* Добавим верхний отступ для вопросов */
+                text-transform: uppercase;
+                /* Текст вопросов заглавными буквами */
+            }
 
-    .faq-section dt {
-      font-weight: 700;
-      /* Сделаем вопросы жирными */
-      margin-top: 20px;
-      /* Добавим верхний отступ для вопросов */
-      text-transform: uppercase;
-      /* Текст вопросов заглавными буквами */
-    }
+            .faq-section dd {
+                margin-left: 0px;
+                /* Добавим левый отступ для ответов */
+                line-height: 1.6;
+                /* Увеличим межстрочное расстояние для удобства чтения */
+            }
 
-    .faq-section dd {
-      margin-left: 0px;
-      /* Добавим левый отступ для ответов */
-      line-height: 1.6;
-      /* Увеличим межстрочное расстояние для удобства чтения */
-    }
+            .reasons {
+                padding: 50px 5px 20px 5px;
+                text-align: center;
+            }
 
-    .reasons {
-      padding: 50px 5px 20px 5px;
-      text-align: center;
-    }
+            .reasons ul {
+                list-style-position: inside;
+                /* Положение маркеров списка внутри блока */
+            }
 
-    .reasons ul {
-      list-style-position: inside;
-      /* Положение маркеров списка внутри блока */
-    }
+            .reasons li {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
 
-    .reasons li {
-      padding: 10px;
-      margin-bottom: 10px;
-    }
+            mark {
+                font-weight: bolder;
+                margin: 0 -0.4em;
+                padding: 0.1em 0.4em;
+                border-radius: 0.8em 0.3em;
+                background: transparent;
+                background-image: linear-gradient(
+                    to right,
+                    rgba(255, 225, 0, 0.1),
+                    rgba(255, 225, 0, 0.7) 4%,
+                    rgba(255, 225, 0, 0.3)
+                );
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+                /* Желтый фон для важных слов */
+            }
 
-    mark {
-      font-weight: bolder;
-      margin: 0 -0.4em;
-  padding: 0.1em 0.4em;
-  border-radius: 0.8em 0.3em;
-  background: transparent;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 225, 0, 0.1),
-    rgba(255, 225, 0, 0.7) 4%,
-    rgba(255, 225, 0, 0.3)
-  );
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-      /* Желтый фон для важных слов */
-    }
-
-    /* .about mark { 
+            /* .about mark {
       background-color: rgb(255, 187, 0);
     } */
 
-    /* ... ваши другие стили ... */
-    .work-images {
-      display: flex;
-      /* Родительский контейнер с display: flex; */
-      justify-content: space-between;
-      /* Распределение элементов по горизонтали */
-      flex-wrap: wrap;
-      /* Позволяет элементам переноситься на новую строку, если они не помещаются */
-    }
+            /* ... ваши другие стили ... */
+            .work-images {
+                display: flex;
+                /* Родительский контейнер с display: flex; */
+                justify-content: space-between;
+                /* Распределение элементов по горизонтали */
+                flex-wrap: wrap;
+                /* Позволяет элементам переноситься на новую строку, если они не помещаются */
+            }
 
-    .work-images img {
-      flex: 1 1 auto;
-      /* flex-grow, flex-shrink и flex-basis. Это позволяет элементам автоматически растягиваться и сжиматься, чтобы заполнить доступное пространство */
-      max-width: 30%;
-      /* Ограничиваем максимальную ширину каждого изображения, чтобы они не были слишком большими */
-      margin: 0.5%;
-      /* Добавляем небольшой отступ вокруг изображений для воздуха */
-    }
+            .work-images img {
+                flex: 1 1 auto;
+                /* flex-grow, flex-shrink и flex-basis. Это позволяет элементам автоматически растягиваться и сжиматься, чтобы заполнить доступное пространство */
+                max-width: 30%;
+                /* Ограничиваем максимальную ширину каждого изображения, чтобы они не были слишком большими */
+                margin: 0.5%;
+                /* Добавляем небольшой отступ вокруг изображений для воздуха */
+            }
 
-        /* ... ваши другие стили ... */
-    .contact-panel {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: #00a09c; /* Замените на цвет, который вы хотите */
-        text-align: center;
-        padding: 20px 0 25px 0;
-        z-index: 100; /* Чтобы убедиться, что панель находится поверх других элементов */
-    }
+            /* ... ваши другие стили ... */
+            .contact-panel {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background: #00a09c; /* Замените на цвет, который вы хотите */
+                text-align: center;
+                padding: 20px 0 25px 0;
+                z-index: 100; /* Чтобы убедиться, что панель находится поверх других элементов */
+            }
 
-    .contact-button {
-        color: #fff; /* Замените на цвет, который вы хотите */
-        text-decoration: none;
-        font-size: 18px;
-    }
-  </style>
-</head>
+            .contact-button {
+                color: #fff; /* Замените на цвет, который вы хотите */
+                text-decoration: none;
+                font-size: 18px;
+            }
+        </style>
+    </head>
 
-<body>
-  <div class="hero">
-    <div class="hero-text">
-      <h1>Ксения Тоечкина</h1>
-      <h2>Детский нейропсихолог</h2>
-      <div class="profile-image-container">
-        <img class="profile-image" loading="lazy" src="profile.png" alt="Фотография Ксении Тоечкиной">
-      </div>
-      <p>Я помогаю родителям детей с различными расстройствами развития сразу <mark>начать дома коррекцию</mark> развития ребенка не <mark>упуская время</mark>.</p>
-    </div>
-  </div>
-  <section class="stats">
-    <div>
-      <p class="stats-number">3.5</p>
-      <p class="stats-label">года занятий с детьми</p>
-    </div>
-    <div>
-      <p class="stats-number">100+</p>
-      <p class="stats-label">учеников</p>
-    </div>
-    <div>
-      <p class="stats-number">150+</p>
-      <p class="stats-label">проведенных консультаций</p>
-    </div>
-  </section>
-  <section class="reasons">
-    <h2>Я могу помочь, если...</h2>
-    <ul>
-      <li>вы заметили <mark>отклонения</mark> в развитии своего ребёнка и не знаете, куда обратиться.</li>
-      <li>вы видите <mark>аутистические признаки</mark> у своего ребенка, но не знаете, что делать</li>
-      <li>у вашего ребенка диагноз <mark>аутизм</mark> и вы не знаете, как заниматься с ним дома</li>
-      <li>ваш ребенок <mark>непоседливый и неусидчивый</mark> и у вас не получается с ним заниматься</li>
-      <li>у вас ребенок 1.5 - 4 лет и он отстает в <mark>речи и коммуникации</mark> от нормы</li>
-      <li>у ребенка <mark>нет указательного жеста</mark>, а ему уже есть 15 месяцев</li>
-      <li>вам кажется, что ребенок <mark>не понимает</mark> обращенную речь</li>
-    </ul>
-  </section>
-  <section class="about">
-    <h2>Обо мне</h2>
-    <p>Меня зовут Ксения. Мне 34 года, я из Риги. Я детский нейропсихолог и монтессори-педагог и я занимаюсь развитием детей с различными расстройствами развития (ЗРР, ЗПРР,
-      аутизм, СДВГ, синдром Дауна). Моя основная задача - помогать родителям <mark>самим корректировать</mark> своих детей.</p>
-    <p>Я понимаю, что <mark>родителям нелегко разобраться</mark> во всех тонкостях развития ребенка. На своих консультациях я рассказываю родителям как правильно заниматься
-      с ребенком, чтобы <mark>улучшить динамику</mark> его развития.
-    </p>
-    <div class="work-images">
-      <img src="zanjatija_1.jpg" loading="lazy" alt="Ксения работает с детьми">
-      <img src="zanjatija_2.jpg" loading="lazy" alt="Ксения работает с детьми">
-      <img src="zanjatija_3.jpg" loading="lazy" alt="Ксения работает с детьми">
-    </div>
-  </section>
-  <section class="faq-section">
-    <h2>Ответы на частые вопросы</h2>
-    <dl>
-      <dt>При каких расстройствах я могу помочь?</dt>
-      <dd>Я могу помочь при расстройствах, таких как ЗРР (задержка речевого развития), ЗПРР (задержка психического
-        развития), РАС (расстройства аутистического спектра), алалия и СДВГ (синдром дефицита внимания и
-        гиперактивности).</dd>
+    <body>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Ксения Тоечкина</h1>
+                <h2>Детский нейропсихолог</h2>
+                <div class="profile-image-container">
+                    <img
+                        class="profile-image"
+                        loading="lazy"
+                        src="/img/profile.png"
+                        alt="Фотография Ксении Тоечкиной"
+                    />
+                </div>
+                <p>
+                    Я помогаю родителям детей с различными расстройствами
+                    развития сразу <mark>начать дома коррекцию</mark> развития
+                    ребенка не <mark>упуская время</mark>.
+                </p>
+            </div>
+        </div>
+        <section class="stats">
+            <div>
+                <p class="stats-number">3.5</p>
+                <p class="stats-label">года занятий с детьми</p>
+            </div>
+            <div>
+                <p class="stats-number">100+</p>
+                <p class="stats-label">учеников</p>
+            </div>
+            <div>
+                <p class="stats-number">150+</p>
+                <p class="stats-label">проведенных консультаций</p>
+            </div>
+        </section>
+        <section class="reasons">
+            <h2>Я могу помочь, если...</h2>
+            <ul>
+                <li>
+                    вы заметили <mark>отклонения</mark> в развитии своего
+                    ребёнка и не знаете, куда обратиться.
+                </li>
+                <li>
+                    вы видите <mark>аутистические признаки</mark> у своего
+                    ребенка, но не знаете, что делать
+                </li>
+                <li>
+                    у вашего ребенка диагноз <mark>аутизм</mark> и вы не знаете,
+                    как заниматься с ним дома
+                </li>
+                <li>
+                    ваш ребенок <mark>непоседливый и неусидчивый</mark> и у вас
+                    не получается с ним заниматься
+                </li>
+                <li>
+                    у вас ребенок 1.5 - 4 лет и он отстает в
+                    <mark>речи и коммуникации</mark> от нормы
+                </li>
+                <li>
+                    у ребенка <mark>нет указательного жеста</mark>, а ему уже
+                    есть 15 месяцев
+                </li>
+                <li>
+                    вам кажется, что ребенок <mark>не понимает</mark> обращенную
+                    речь
+                </li>
+            </ul>
+        </section>
+        <section class="about">
+            <h2>Обо мне</h2>
+            <p>
+                Меня зовут Ксения. Мне 34 года, я из Риги. Я детский
+                нейропсихолог и монтессори-педагог и я занимаюсь развитием детей
+                с различными расстройствами развития (ЗРР, ЗПРР, аутизм, СДВГ,
+                синдром Дауна). Моя основная задача - помогать родителям
+                <mark>самим корректировать</mark> своих детей.
+            </p>
+            <p>
+                Я понимаю, что <mark>родителям нелегко разобраться</mark> во
+                всех тонкостях развития ребенка. На своих консультациях я
+                рассказываю родителям как правильно заниматься с ребенком, чтобы
+                <mark>улучшить динамику</mark> его развития.
+            </p>
+            <div class="work-images">
+                <img
+                    src="/img/zanjatija_1.jpg"
+                    loading="lazy"
+                    alt="Ксения работает с детьми"
+                />
+                <img
+                    src="/img/zanjatija_2.jpg"
+                    loading="lazy"
+                    alt="Ксения работает с детьми"
+                />
+                <img
+                    src="/img/zanjatija_3.jpg"
+                    loading="lazy"
+                    alt="Ксения работает с детьми"
+                />
+            </div>
+        </section>
+        <section class="faq-section">
+            <h2>Ответы на частые вопросы</h2>
+            <dl>
+                <dt>При каких расстройствах я могу помочь?</dt>
+                <dd>
+                    Я могу помочь при расстройствах, таких как ЗРР (задержка
+                    речевого развития), ЗПРР (задержка психического развития),
+                    РАС (расстройства аутистического спектра), алалия и СДВГ
+                    (синдром дефицита внимания и гиперактивности).
+                </dd>
 
-      <dt>Консультирую ли я про развитие нормотипичных детей?</dt>
-      <dd>Да, я консультирую по вопросам развития нормотипичных детей и могу помочь подготовить вашего ребенка к школе.
-      </dd>
+                <dt>Консультирую ли я про развитие нормотипичных детей?</dt>
+                <dd>
+                    Да, я консультирую по вопросам развития нормотипичных детей
+                    и могу помочь подготовить вашего ребенка к школе.
+                </dd>
 
-      <dt>При каких расстройствах я не могу помочь?</dt>
-      <dd>Я не могу помочь при ДЦП (детском церебральном параличе) и при сильной умственной отсталости. Я не помогу, если ребенок картавит или заикается.</dd>
+                <dt>При каких расстройствах я не могу помочь?</dt>
+                <dd>
+                    Я не могу помочь при ДЦП (детском церебральном параличе) и
+                    при сильной умственной отсталости. Я не помогу, если ребенок
+                    картавит или заикается.
+                </dd>
 
-      <dt>Выписываю ли я лекарства?</dt>
-      <dd>Нет, я не могу выписывать лекарства, так как я не врач. Я могу дать рекомендации, которые вы сможете обсудить
-      со своим лечащим врачом.</dd>
+                <dt>Выписываю ли я лекарства?</dt>
+                <dd>
+                    Нет, я не могу выписывать лекарства, так как я не врач. Я
+                    могу дать рекомендации, которые вы сможете обсудить со своим
+                    лечащим врачом.
+                </dd>
 
-      <dt>Ставлю ли я диагнозы?</dt>
-      <dd>Нет, я не могу ставить диагнозы, так как это прерогатива врача. Я - педагог, и моя основная задача - помочь в
-      составлении программы коррекции развития ребенка.</dd>
+                <dt>Ставлю ли я диагнозы?</dt>
+                <dd>
+                    Нет, я не могу ставить диагнозы, так как это прерогатива
+                    врача. Я - педагог, и моя основная задача - помочь в
+                    составлении программы коррекции развития ребенка.
+                </dd>
 
-      <dt>Зачем нужны видеозаписи поведения ребенка?</dt>
-      <dd>Видеозаписи необходимы для того, чтобы я могла лучше понять его поведение, навыки и сложности, с которыми он
-      сталкивается. Это позволяет мне дать более точные и конкретные рекомендации.</dd>
-      <dt>Как происходит оплата консультации?</dt>
-      <dd>Оплатить можно MasterCard, Visa карточками, а так же через PayPal. Оплата происходит через платежную систему Stripe. Stripe это одна из самых популярных платежных систем в мире, используется на миллионах сайтов. Она позволяет оплачивать услуги и товары, не передавай данные о карточке получателю средств.</dd>
-  
-    </dl>
-  </section>
-  <div class="contact-panel">
-    <a href="/consult.html" class="contact-button">Читать про консультации</a>
-</div>
-
-</body>
-
+                <dt>Зачем нужны видеозаписи поведения ребенка?</dt>
+                <dd>
+                    Видеозаписи необходимы для того, чтобы я могла лучше понять
+                    его поведение, навыки и сложности, с которыми он
+                    сталкивается. Это позволяет мне дать более точные и
+                    конкретные рекомендации.
+                </dd>
+                <dt>Как происходит оплата консультации?</dt>
+                <dd>
+                    Оплатить можно MasterCard, Visa карточками, а так же через
+                    PayPal. Оплата происходит через платежную систему Stripe.
+                    Stripe это одна из самых популярных платежных систем в мире,
+                    используется на миллионах сайтов. Она позволяет оплачивать
+                    услуги и товары, не передавай данные о карточке получателю
+                    средств.
+                </dd>
+            </dl>
+        </section>
+        <div class="contact-panel">
+            <a href="/consult.html" class="contact-button"
+                >Читать про консультации</a
+            >
+        </div>
+    </body>
 </html>

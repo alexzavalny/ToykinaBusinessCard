@@ -1,0 +1,325 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+p {
+    font-family: "Merriweather", serif;
+}
+ul {
+    padding-inline-start: 0;
+}
+
+.profile-image {
+    max-width: 250px;
+    display: block;
+}
+
+.profile-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ... ваши другие стили... */
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 500px;
+}
+
+.about,
+.consultation,
+.testimonials {
+    padding: 10px 50px;
+    text-align: center;
+}
+
+.consultation-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.consultation-button:hover {
+    background-color: #e33025;
+}
+
+.contacts {
+    color: #373737;
+    padding: 2rem 0;
+    text-align: center;
+    background-image: url("/img/low_background.jpg");
+    background-size: cover; /* Покрывает всю область контейнера, может обрезать изображение */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-position: center; /* Центрирует изображение */
+    padding-bottom: 70px;
+}
+
+.contacts a {
+    color: #373737;
+    text-decoration: none;
+}
+
+.management {
+    margin: 0 4rem;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(160deg, #fff4ba, #fffdf6);
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+}
+
+.management h2 {
+    color: rgb(97, 82, 0);
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+    margin: 40px 0 0 0;
+    text-align: center;
+    background-color: #f0f0f0;
+    background-image: url("/img/upper_background.jpg");
+    background-size: cover; /* Покрывает всю область контейнера, может обрезать изображение */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-position: center; /* Центрирует изображение */
+}
+
+.stats-number {
+    font-size: 60px;
+    color: #007bff;
+    font-weight: bold;
+    margin: 0;
+}
+
+.stats-label {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Это будет работать для экранов размером меньше 600px */
+@media (max-width: 600px) {
+    .stats {
+        flex-direction: column;
+    }
+
+    .stats > div {
+        margin-bottom: 20px;
+    }
+
+    .about,
+    .consultation,
+    .testimonials {
+        padding: 10px 10px;
+    }
+
+    .management {
+        margin: 0 1rem;
+    }
+}
+
+.faq-section {
+    background: #f9f9f9;
+    /* Подложка с серым фоном */
+    padding: 40px;
+    /* Внутренние отступы для большего пространства */
+    margin: 40px 0;
+    /* Внешние отступы для отделения от других блоков */
+    border-radius: 15px;
+    /* Скругление углов */
+}
+
+.faq-section dt {
+    font-weight: 700;
+    /* Сделаем вопросы жирными */
+    margin-top: 20px;
+    /* Добавим верхний отступ для вопросов */
+    text-transform: uppercase;
+    /* Текст вопросов заглавными буквами */
+}
+
+.faq-section dd {
+    margin-left: 0px;
+    /* Добавим левый отступ для ответов */
+    line-height: 1.6;
+    /* Увеличим межстрочное расстояние для удобства чтения */
+}
+
+.reasons {
+    padding: 50px 5px 20px 5px;
+    text-align: center;
+}
+
+.reasons ul {
+    list-style-position: inside;
+    /* Положение маркеров списка внутри блока */
+}
+
+.reasons li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+mark {
+    font-weight: bolder;
+    margin: 0 -0.4em;
+    padding: 0.1em 0.4em;
+    border-radius: 0.8em 0.3em;
+    background: transparent;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 225, 0, 0.1),
+        rgba(255, 225, 0, 0.7) 4%,
+        rgba(255, 225, 0, 0.3)
+    );
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    /* Желтый фон для важных слов */
+}
+
+/* .about mark {
+      background-color: rgb(255, 187, 0);
+    } */
+
+/* ... ваши другие стили ... */
+.work-images {
+    display: flex;
+    /* Родительский контейнер с display: flex; */
+    justify-content: space-between;
+    /* Распределение элементов по горизонтали */
+    flex-wrap: wrap;
+    /* Позволяет элементам переноситься на новую строку, если они не помещаются */
+}
+
+.work-images img {
+    flex: 1 1 auto;
+    /* flex-grow, flex-shrink и flex-basis. Это позволяет элементам автоматически растягиваться и сжиматься, чтобы заполнить доступное пространство */
+    max-width: 30%;
+    /* Ограничиваем максимальную ширину каждого изображения, чтобы они не были слишком большими */
+    margin: 0.5%;
+    /* Добавляем небольшой отступ вокруг изображений для воздуха */
+}
+
+/* ... ваши другие стили ... */
+.contact-panel {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #00a09c; /* Замените на цвет, который вы хотите */
+    text-align: center;
+    padding: 20px 0 25px 0;
+    z-index: 100; /* Чтобы убедиться, что панель находится поверх других элементов */
+}
+
+.contact-button {
+    color: #fff; /* Замените на цвет, который вы хотите */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.links {
+    padding: 20px;
+}
+
+.links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+    text-decoration: none;
+    border-radius: 5px; /* rounded corners */
+    transition: background-color 0.3s ease; /* smooth transition */
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.links a.rainbow {
+    background: #f2709c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #ff9472,
+        #f2709c
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ff9472,
+        #f2709c
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.links a:hover {
+    background-color: #417acf; /* color when button is hovered */
+}
+
+/* Product cards */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.product-card {
+    border: 1px solid #333;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 0 300px;
+    max-width: 400px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+.product-card h2 {
+    margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button.disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Common sections */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}

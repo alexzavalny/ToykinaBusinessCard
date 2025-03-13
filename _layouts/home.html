@@ -28,7 +28,7 @@ layout: default
 <div class="latest-products">
   <h2>Мои продукты</h2>
   <div class="products-grid">
-    {% for product in site.products limit:2 %}
+    {% for product in site.products limit:4 %}
       <div class="product-card">
         {% if product.image %}
         <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image">

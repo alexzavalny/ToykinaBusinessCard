@@ -284,30 +284,53 @@ mark {
 }
 
 /* Product cards */
-.products {
+.products, .products-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
 }
 
 .product-card {
-    border: 1px solid #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
     margin: 10px;
     flex: 1 0 300px;
     max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .product-card img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 20px 0;
+    margin: 0 0 15px 0;
+    border-radius: 4px;
 }
 
-.product-card h2 {
+.product-card h3 {
     margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.product-card .button {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .button {
@@ -333,4 +356,25 @@ mark {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+/* Latest products section on homepage */
+.latest-products {
+    margin: 40px 0;
+}
+
+.latest-products .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments for product grid */
+@media (max-width: 768px) {
+    .products-grid .product-card,
+    .products .product-card {
+        flex: 1 0 100%;
+    }
 }

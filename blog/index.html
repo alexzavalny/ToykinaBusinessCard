@@ -1,19 +1,25 @@
 ---
-layout: default
+layout: page
 title: Блог
+permalink: /blog/
 ---
 
-<div class="blog-page">
-  <h1 class="page-title">{{ page.title }}</h1>
+<div class="blog-container">
+  <h2 class="section-heading">{{ page.title }}</h2>
+  <p class="section-description">Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.</p>
 
   {% if site.posts.size > 0 %}
     <div class="post-list">
       {% for post in site.posts %}
         <div class="post-card">
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-          <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
-          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          <a href="{{ post.url | relative_url }}" class="read-more">Читать дальше →</a>
+          <div class="post-content">
+            <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+            <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          </div>
+          <div class="post-actions">
+            <a href="{{ post.url | relative_url }}" class="button">Читать дальше →</a>
+          </div>
         </div>
       {% endfor %}
     </div>

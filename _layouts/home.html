@@ -26,42 +26,50 @@ layout: default
 </div>
 
 <div class="latest-products">
-  <h2>Мои продукты</h2>
+  <h2 class="section-heading">Мои продукты</h2>
   <div class="products-grid">
     {% for product in site.products limit:4 %}
       <div class="product-card">
         {% if product.image %}
-        <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image">
+        <div class="product-image-container">
+          <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image">
+        </div>
         {% endif %}
-        <h3><a href="{{ product.url | relative_url }}">{{ product.title }}</a></h3>
-        <p>{{ product.excerpt | strip_html | truncatewords: 20 }}</p>
-        {% if product.price %}
-          <p class="price">{{ product.price }}</p>
-        {% endif %}
-        <a href="{{ product.url | relative_url }}" class="button">Подробнее</a>
+        <div class="product-content">
+          <h3 class="product-title"><a href="{{ product.url | relative_url }}">{{ product.title }}</a></h3>
+          <p class="product-excerpt">{{ product.excerpt | strip_html | truncatewords: 20 }}</p>
+          {% if product.price %}
+            <p class="price">{{ product.price }}</p>
+          {% endif %}
+          <div class="product-buttons">
+            <a href="{{ product.url | relative_url }}" class="button">Подробнее</a>
+          </div>
+        </div>
       </div>
     {% endfor %}
   </div>
   <div class="more-posts">
-    <a href="{{ "/shop/" | relative_url }}" class="button">Все продукты</a>
+    <a href="{{ "/shop/" | relative_url }}" class="button primary">Все продукты</a>
   </div>
 </div>
 
 <div class="latest-posts">
-  <h2>Последние записи в блоге</h2>
+  <h2 class="section-heading">Последние записи в блоге</h2>
   <div class="post-list">
     {% for post in site.posts limit:3 %}
       <div class="post-card">
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
-        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        <a href="{{ post.url | relative_url }}" class="read-more">Читать дальше →</a>
+        <div class="post-content">
+          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Читать дальше →</a>
+        </div>
       </div>
     {% endfor %}
   </div>
   {% if site.posts.size > 3 %}
     <div class="more-posts">
-      <a href="{{ "/blog/" | relative_url }}" class="button">Все записи</a>
+      <a href="{{ "/blog/" | relative_url }}" class="button primary">Все записи</a>
     </div>
   {% endif %}
 </div> 

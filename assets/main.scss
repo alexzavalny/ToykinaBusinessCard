@@ -16,27 +16,36 @@ html {
 }
 
 .post-card {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+  height: 100%;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
 
-  h2, h3 {
+  .post-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .post-title {
     margin-top: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: #333;
+    margin-bottom: 0.5rem;
     
-    &:hover {
-      color: #f44336;
+    a {
+      text-decoration: none;
+      color: #333;
+      
+      &:hover {
+        color: #f44336;
+      }
     }
   }
 
@@ -45,12 +54,19 @@ html {
     color: #777;
     margin-bottom: 1rem;
   }
+  
+  .post-excerpt {
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
 
   .read-more {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: auto;
     color: #f44336;
     font-weight: 500;
+    text-decoration: none;
     
     &:hover {
       text-decoration: underline;
@@ -91,6 +107,12 @@ html {
 }
 
 // Services styles
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -99,45 +121,108 @@ html {
 }
 
 .service-card {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 250px;
+  position: relative;
+  padding-bottom: 60px; /* Space for the button */
+  
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
-
-  h2 {
+  
+  .service-content {
+    padding: 1.5rem;
+    padding-bottom: 0;
+    flex-grow: 1;
+  }
+  
+  .service-title {
     margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    
+    a {
+      color: #333;
+      text-decoration: none;
+      
+      &:hover {
+        color: #f44336;
+      }
+    }
   }
-
+  
+  .service-excerpt {
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  
   .service-price {
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: #f44336;
     margin: 1rem 0;
   }
-
-  .button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #f44336;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #e33025;
+  
+  .service-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      text-align: center;
+      padding: 0;
+      background-color: #f44336;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 0;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-size: 1.1rem;
+      
+      &:hover {
+        background-color: #e33025;
+      }
     }
   }
 }
 
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+
 // Products styles
+.shop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -146,59 +231,100 @@ html {
 }
 
 .product-card {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+  height: 100%;
+  
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   }
-
-  h2 {
-    margin-top: 1rem;
+  
+  .product-image-container {
+    overflow: hidden;
+    
+    .product-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
-
-  .product-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 4px;
+  
+  .product-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
-
+  
+  .product-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    
+    a {
+      color: #333;
+      text-decoration: none;
+      
+      &:hover {
+        color: #f44336;
+      }
+    }
+  }
+  
+  .product-excerpt {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    color: #666;
+  }
+  
   .price {
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: #f44336;
     margin: 1rem 0;
   }
-
-  .button {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #f5f5f5;
-    color: #333;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-
-    &:hover {
-      background-color: #e5e5e5;
-    }
-
-    &.primary {
-      background-color: #f44336;
-      color: white;
-      margin-top: 0.5rem;
-
-      &:hover {
-        background-color: #e33025;
+  
+  .product-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    
+    .button {
+      flex: 1;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      
+      &:first-child {
+        background-color: #f5f5f5;
+        color: #333;
+        
+        &:hover {
+          background-color: #e5e5e5;
+        }
+      }
+      
+      &.primary {
+        background-color: #f44336;
+        color: white;
+        
+        &:hover {
+          background-color: #e33025;
+        }
       }
     }
   }
@@ -443,37 +569,6 @@ html {
   }
 }
 
-// Responsive
-@media (max-width: 768px) {
-  .post-list,
-  .services-grid,
-  .products-grid,
-  .product .product-features .features {
-    grid-template-columns: 1fr;
-  }
-  
-  .site-nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  .post-card,
-  .service-card,
-  .product-card {
-    padding: 1rem;
-  }
-}
-
 // Testimonials styles
 .testimonials {
   padding: 2rem 0;
@@ -549,4 +644,49 @@ html {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .product-card .product-buttons {
+    flex-direction: column;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .post-list,
+  .product .product-features .features {
+    grid-template-columns: 1fr;
+  }
+  
+  .site-nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .post-card {
+    padding: 1rem;
+  }
 } 

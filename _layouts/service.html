@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="service">
+  <header class="service-header">
+    <h1 class="service-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="service-content">
+    {{ content }}
+  </div>
+
+  {% if page.price %}
+  <div class="service-price">
+    <h2>Стоимость</h2>
+    <p class="price">{{ page.price }}</p>
+  </div>
+  {% endif %}
+
+  <div class="contact-panel">
+    <a href="/contacts/" class="contact-button">Связаться для консультации</a>
+  </div>
+</article> 

@@ -1,0 +1,23 @@
+---
+layout: default
+title: Блог
+---
+
+<div class="blog-page">
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  {% if site.posts.size > 0 %}
+    <div class="post-list">
+      {% for post in site.posts %}
+        <div class="post-card">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+          <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Читать дальше →</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Пока нет записей в блоге.</p>
+  {% endif %}
+</div> 

@@ -68,14 +68,20 @@
 
   <div class="page-content">
     <div class="blog-container">
-  <div class="blog-sidebar">
+  <div class="mobile-category-toggle">
+    <button id="category-toggle" class="category-toggle-button">
+      Категории <span class="toggle-icon">▼</span>
+    </button>
+  </div>
+  
+  <div class="blog-sidebar" id="blog-sidebar">
     <div class="sidebar-section">
       <h3 class="sidebar-heading">Категории</h3>
       <ul class="category-list">
         <li>
           <a href="/blog/" class="category-link category-all active">
             Все статьи
-            <span class="category-count">5</span>
+            <span class="category-count">4</span>
           </a>
         </li>
         
@@ -94,15 +100,6 @@
           <li>
             <a href="/blog/#%D0%B8%D0%B3%D1%80%D1%8B" class="category-link" data-category="%D0%B8%D0%B3%D1%80%D1%8B">
               Игры
-              <span class="category-count">1</span>
-            </a>
-          </li>
-        
-          
-          
-          <li>
-            <a href="/blog/#%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E" class="category-link" data-category="%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E">
-              Интервью
               <span class="category-count">1</span>
             </a>
           </li>
@@ -146,15 +143,6 @@
           
           
           <li>
-            <a href="/blog/#%D1%80%D0%B5%D1%87%D0%B5%D0%B2%D0%BE%D0%B5+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5" class="category-link" data-category="%D1%80%D0%B5%D1%87%D0%B5%D0%B2%D0%BE%D0%B5+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5">
-              Речевое развитие
-              <span class="category-count">1</span>
-            </a>
-          </li>
-        
-          
-          
-          <li>
             <a href="/blog/#%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8+%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8" class="category-link" data-category="%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8+%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8">
               Своими руками
               <span class="category-count">1</span>
@@ -166,15 +154,6 @@
           <li>
             <a href="/blog/#%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B+%D1%80%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%D0%BC" class="category-link" data-category="%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B+%D1%80%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8F%D0%BC">
               Советы родителям
-              <span class="category-count">1</span>
-            </a>
-          </li>
-        
-          
-          
-          <li>
-            <a href="/blog/#%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2" class="category-link" data-category="%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2">
-              Советы специалистов
               <span class="category-count">1</span>
             </a>
           </li>
@@ -238,35 +217,6 @@
             </div>
             <div class="post-actions">
               <a href="/blog/2023/09/20/educational-games/" class="button">Читать дальше →</a>
-            </div>
-          </div>
-        
-          <div class="post-card" data-categories="%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E %D1%80%D0%B5%D1%87%D0%B5%D0%B2%D0%BE%D0%B5+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5 %D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2 ">
-            <div class="post-content">
-              <h3 class="post-title"><a href="/blog/2023/08/05/interview-with-specialist/">Интервью с логопедом: ключевые моменты речевого развития детей</a></h3>
-              <p class="post-meta">
-                05.08.2023
-                
-                  &bull; 
-                  
-                    
-                    <span class="post-category"><a href="/blog/#%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D1%8C%D1%8E">интервью</a></span>
-                    , 
-                  
-                    
-                    <span class="post-category"><a href="/blog/#%D1%80%D0%B5%D1%87%D0%B5%D0%B2%D0%BE%D0%B5+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5">речевое развитие</a></span>
-                    , 
-                  
-                    
-                    <span class="post-category"><a href="/blog/#%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D1%8B+%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2">советы специалистов</a></span>
-                    
-                  
-                
-              </p>
-              <p class="post-excerpt">В сегодняшней статье я хочу поделиться с вами интервью с опытным логопедом Мариной Петровой, которая уже более 15 лет помогает детям преодолевать речевые трудности. Мы обсудили ключевые моменты речевого развития...</p>
-            </div>
-            <div class="post-actions">
-              <a href="/blog/2023/08/05/interview-with-specialist/" class="button">Читать дальше →</a>
             </div>
           </div>
         
@@ -396,6 +346,12 @@
           document.querySelector('.section-heading').textContent = 'Блог: ' + categoryName;
           document.querySelector('.section-description').textContent = 'Статьи по теме "' + categoryName + '"';
         }
+        
+        // Close mobile category menu after selection on mobile
+        if (window.innerWidth <= 768) {
+          document.getElementById('blog-sidebar').classList.remove('active');
+          document.querySelector('.toggle-icon').textContent = '▼';
+        }
       } else {
         // Show all posts if no category is selected
         document.querySelectorAll('.post-card').forEach(function(post) {
@@ -413,6 +369,26 @@
         document.querySelector('.section-description').textContent = 'Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.';
       }
     }
+    
+    // Mobile category toggle
+    var categoryToggle = document.getElementById('category-toggle');
+    var blogSidebar = document.getElementById('blog-sidebar');
+    
+    categoryToggle.addEventListener('click', function() {
+      blogSidebar.classList.toggle('active');
+      var toggleIcon = document.querySelector('.toggle-icon');
+      toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
+    });
+    
+    // Close sidebar when clicking on a category on mobile
+    document.querySelectorAll('.category-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          blogSidebar.classList.remove('active');
+          document.querySelector('.toggle-icon').textContent = '▼';
+        }
+      });
+    });
     
     // Filter posts on page load
     filterPostsByCategory();

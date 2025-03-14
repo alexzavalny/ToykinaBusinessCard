@@ -5,7 +5,13 @@ permalink: /blog/
 ---
 
 <div class="blog-container">
-  <div class="blog-sidebar">
+  <div class="mobile-category-toggle">
+    <button id="category-toggle" class="category-toggle-button">
+      Категории <span class="toggle-icon">▼</span>
+    </button>
+  </div>
+  
+  <div class="blog-sidebar" id="blog-sidebar">
     <div class="sidebar-section">
       <h3 class="sidebar-heading">Категории</h3>
       <ul class="category-list">
@@ -101,6 +107,12 @@ permalink: /blog/
           document.querySelector('.section-heading').textContent = 'Блог: ' + categoryName;
           document.querySelector('.section-description').textContent = 'Статьи по теме "' + categoryName + '"';
         }
+        
+        // Close mobile category menu after selection on mobile
+        if (window.innerWidth <= 768) {
+          document.getElementById('blog-sidebar').classList.remove('active');
+          document.querySelector('.toggle-icon').textContent = '▼';
+        }
       } else {
         // Show all posts if no category is selected
         document.querySelectorAll('.post-card').forEach(function(post) {
@@ -118,6 +130,26 @@ permalink: /blog/
         document.querySelector('.section-description').textContent = 'Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.';
       }
     }
+    
+    // Mobile category toggle
+    var categoryToggle = document.getElementById('category-toggle');
+    var blogSidebar = document.getElementById('blog-sidebar');
+    
+    categoryToggle.addEventListener('click', function() {
+      blogSidebar.classList.toggle('active');
+      var toggleIcon = document.querySelector('.toggle-icon');
+      toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
+    });
+    
+    // Close sidebar when clicking on a category on mobile
+    document.querySelectorAll('.category-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          blogSidebar.classList.remove('active');
+          document.querySelector('.toggle-icon').textContent = '▼';
+        }
+      });
+    });
     
     // Filter posts on page load
     filterPostsByCategory();

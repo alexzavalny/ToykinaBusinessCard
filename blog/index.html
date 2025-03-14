@@ -5,47 +5,64 @@ permalink: /blog/
 ---
 
 <div class="blog-container">
-  <h2 class="section-heading">{{ page.title }}</h2>
-  <p class="section-description">Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.</p>
-
-  <!-- Category Navigation -->
-  <div class="category-nav">
-    <a href="{{ '/blog/' | relative_url }}" class="category-link category-all active">Все статьи</a>
-    {% assign categories = site.posts | map: "categories" | compact | uniq | sort %}
-    {% for category in categories %}
-      {% assign encoded_category = category | url_encode %}
-      <a href="{{ '/blog/' | relative_url }}#{{ encoded_category }}" class="category-link" data-category="{{ encoded_category }}">{{ category | capitalize }}</a>
-    {% endfor %}
-  </div>
-
-  {% if site.posts.size > 0 %}
-    <div class="post-list">
-      {% for post in site.posts %}
-        <div class="post-card" data-categories="{% for cat in post.categories %}{{ cat | url_encode }} {% endfor %}">
-          <div class="post-content">
-            <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-            <p class="post-meta">
-              {{ post.date | date: "%d.%m.%Y" }}
-              {% if post.categories != empty %}
-                &bull; 
-                {% for category in post.categories %}
-                  {% assign encoded_category = category | url_encode %}
-                  <span class="post-category"><a href="{{ '/blog/' | relative_url }}#{{ encoded_category }}">{{ category }}</a></span>
-                  {% unless forloop.last %}, {% endunless %}
-                {% endfor %}
-              {% endif %}
-            </p>
-            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          </div>
-          <div class="post-actions">
-            <a href="{{ post.url | relative_url }}" class="button">Читать дальше →</a>
-          </div>
-        </div>
-      {% endfor %}
+  <div class="blog-sidebar">
+    <div class="sidebar-section">
+      <h3 class="sidebar-heading">Категории</h3>
+      <ul class="category-list">
+        <li>
+          <a href="{{ '/blog/' | relative_url }}" class="category-link category-all active">
+            Все статьи
+            <span class="category-count">{{ site.posts.size }}</span>
+          </a>
+        </li>
+        {% assign categories = site.posts | map: "categories" | compact | uniq | sort %}
+        {% for category in categories %}
+          {% assign encoded_category = category | url_encode %}
+          {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category" %}
+          <li>
+            <a href="{{ '/blog/' | relative_url }}#{{ encoded_category }}" class="category-link" data-category="{{ encoded_category }}">
+              {{ category | capitalize }}
+              <span class="category-count">{{ category_posts.size }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
-  {% else %}
-    <p>Пока нет записей в блоге.</p>
-  {% endif %}
+  </div>
+  
+  <div class="blog-content">
+    <h2 class="section-heading">{{ page.title }}</h2>
+    <p class="section-description">Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.</p>
+
+    {% if site.posts.size > 0 %}
+      <div id="all-posts-container" class="post-list">
+        {% for post in site.posts %}
+          <div class="post-card" data-categories="{% for cat in post.categories %}{{ cat | url_encode }} {% endfor %}">
+            <div class="post-content">
+              <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+              <p class="post-meta">
+                {{ post.date | date: "%d.%m.%Y" }}
+                {% if post.categories != empty %}
+                  &bull; 
+                  {% for category in post.categories %}
+                    {% assign encoded_category = category | url_encode %}
+                    <span class="post-category"><a href="{{ '/blog/' | relative_url }}#{{ encoded_category }}">{{ category }}</a></span>
+                    {% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </p>
+              <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            </div>
+            <div class="post-actions">
+              <a href="{{ post.url | relative_url }}" class="button">Читать дальше →</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Пока нет записей в блоге.</p>
+    {% endif %}
+  </div>
 </div>
 
 <script>
@@ -79,7 +96,7 @@ permalink: /blog/
         });
         
         // Update page title
-        var categoryName = activeLink ? activeLink.textContent : '';
+        var categoryName = activeLink ? activeLink.textContent.trim().split('\n')[0].trim() : '';
         if (categoryName) {
           document.querySelector('.section-heading').textContent = 'Блог: ' + categoryName;
           document.querySelector('.section-description').textContent = 'Статьи по теме "' + categoryName + '"';

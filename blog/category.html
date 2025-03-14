@@ -1,0 +1,20 @@
+---
+layout: page
+---
+
+<script>
+  // Get the category from URL
+  var path = window.location.pathname;
+  var category = path.split('/').pop();
+  
+  // Decode the URL-encoded category
+  var decodedCategory = decodeURIComponent(category);
+  
+  // Redirect to the clean URL for this category
+  window.location.href = "/blog/#" + category;
+</script>
+
+<div class="blog-container">
+  <h2 class="section-heading">Перенаправление...</h2>
+  <p>Пожалуйста, подождите. Вы будете перенаправлены на страницу категории.</p>
+</div> 

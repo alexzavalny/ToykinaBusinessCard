@@ -10,6 +10,45 @@ html {
   gap: 2rem;
 }
 
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.category-link {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.category-link:hover {
+  background-color: #e0e0e0;
+  color: #222;
+}
+.category-link.active {
+  background-color: #b8d8d8;
+  color: #333;
+  font-weight: 500;
+}
+
+.post-category {
+  display: inline-block;
+}
+.post-category a {
+  color: #4a7a7a;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.post-category a:hover {
+  text-decoration: underline;
+}
+
 .post-card {
   border-radius: 10px;
   overflow: hidden;

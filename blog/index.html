@@ -8,13 +8,33 @@ permalink: /blog/
   <h2 class="section-heading">{{ page.title }}</h2>
   <p class="section-description">Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.</p>
 
+  <!-- Category Navigation -->
+  <div class="category-nav">
+    <a href="{{ '/blog/' | relative_url }}" class="category-link category-all active">Все статьи</a>
+    {% assign categories = site.posts | map: "categories" | compact | uniq | sort %}
+    {% for category in categories %}
+      {% assign encoded_category = category | url_encode %}
+      <a href="{{ '/blog/' | relative_url }}#{{ encoded_category }}" class="category-link" data-category="{{ encoded_category }}">{{ category | capitalize }}</a>
+    {% endfor %}
+  </div>
+
   {% if site.posts.size > 0 %}
     <div class="post-list">
       {% for post in site.posts %}
-        <div class="post-card">
+        <div class="post-card" data-categories="{% for cat in post.categories %}{{ cat | url_encode }} {% endfor %}">
           <div class="post-content">
             <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
-            <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
+            <p class="post-meta">
+              {{ post.date | date: "%d.%m.%Y" }}
+              {% if post.categories != empty %}
+                &bull; 
+                {% for category in post.categories %}
+                  {% assign encoded_category = category | url_encode %}
+                  <span class="post-category"><a href="{{ '/blog/' | relative_url }}#{{ encoded_category }}">{{ category }}</a></span>
+                  {% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+              {% endif %}
+            </p>
             <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           </div>
           <div class="post-actions">
@@ -26,4 +46,66 @@ permalink: /blog/
   {% else %}
     <p>Пока нет записей в блоге.</p>
   {% endif %}
-</div> 
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to filter posts by category
+    function filterPostsByCategory() {
+      // Get the category from the URL hash
+      var hash = window.location.hash;
+      if (hash) {
+        // Remove the # symbol
+        var category = hash.substring(1);
+        
+        // Update active class on category links
+        document.querySelectorAll('.category-link').forEach(function(link) {
+          link.classList.remove('active');
+        });
+        
+        var activeLink = document.querySelector('.category-link[data-category="' + category + '"]');
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+        
+        // Show only posts with the selected category
+        document.querySelectorAll('.post-card').forEach(function(post) {
+          var postCategories = post.getAttribute('data-categories');
+          if (postCategories.includes(category)) {
+            post.style.display = '';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+        
+        // Update page title
+        var categoryName = activeLink ? activeLink.textContent : '';
+        if (categoryName) {
+          document.querySelector('.section-heading').textContent = 'Блог: ' + categoryName;
+          document.querySelector('.section-description').textContent = 'Статьи по теме "' + categoryName + '"';
+        }
+      } else {
+        // Show all posts if no category is selected
+        document.querySelectorAll('.post-card').forEach(function(post) {
+          post.style.display = '';
+        });
+        
+        // Make "All posts" link active
+        document.querySelectorAll('.category-link').forEach(function(link) {
+          link.classList.remove('active');
+        });
+        document.querySelector('.category-all').classList.add('active');
+        
+        // Reset page title
+        document.querySelector('.section-heading').textContent = 'Блог';
+        document.querySelector('.section-description').textContent = 'Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.';
+      }
+    }
+    
+    // Filter posts on page load
+    filterPostsByCategory();
+    
+    // Filter posts when the hash changes
+    window.addEventListener('hashchange', filterPostsByCategory);
+  });
+</script> 

@@ -4,7 +4,7 @@ title: "Базовый курс по коррекции детей с задер
 image: "/img/course.jpg"
 price: "19€"
 button_url: "https://t.me/ToykinaCourseBot"
-button_text: "Открыть курс в Telegram"
+button_text: "Открыть курс"
 ---
 
 <style>

@@ -10,7 +10,11 @@ permalink: /contacts/
 
 ## Телеграм
 
-Напишите мне в Телеграм: [@toy_kina](https://t.me/toy_kina)
+[@toyechkina](https://t.me/toyechkina)
+
+## Инстаграм
+
+[@toy_kina](https://instagram.com/@toy_kina)
 
 ## Социальные сети
 

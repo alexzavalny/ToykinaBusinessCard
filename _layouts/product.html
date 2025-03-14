@@ -17,30 +17,4 @@ layout: default
       {{ content }}
     </div>
 
-    {% if page.price %}
-    <div class="product-price">
-      <p class="price">{{ page.price }}</p>
-    </div>
-    {% endif %}
-
-    {% if page.button_url %}
-    <div class="product-actions">
-      <a href="{{ page.button_url }}" class="button">{{ page.button_text | default: "Купить" }}</a>
-    </div>
-    {% endif %}
-  </div>
-
-  {% if page.features %}
-  <div class="product-features">
-    <h2>Особенности</h2>
-    <div class="features">
-      {% for feature in page.features %}
-      <div class="feature">
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
 </article> 

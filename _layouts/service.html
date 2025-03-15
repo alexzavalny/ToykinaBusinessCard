@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="service">
+
+  <div class="service-content">
+    {{ content }}
+  </div>
+
+  {% if page.price %}
+  <div class="service-price">
+    <h2>Стоимость</h2>
+    <p class="price">{{ page.price }}</p>
+  </div>
+  {% endif %}
+</article> 

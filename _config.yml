@@ -1,0 +1,55 @@
+# Site settings
+title: Ксения Тоечкина - Детский нейропсихолог
+email: ksenija.toyechkina@gmail.com
+description: >-
+  Детский нейропсихолог. Я помогаю родителям детей с различными расстройствами
+  развития сразу начать дома коррекцию развития ребенка не упуская время.
+baseurl: ""
+url: ""
+telegram_username: toyechkina
+youtube_username: "@toy_kina"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Category settings
+category_path: /blog/category/
+encoding: utf-8
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /:collection/:name/
+  products:
+    output: true
+    permalink: /:collection/:name/
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Ксения Тоечкина"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page" 

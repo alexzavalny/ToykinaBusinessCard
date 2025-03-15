@@ -1,0 +1,328 @@
+---
+layout: page
+title: Блог
+permalink: /blog/
+---
+
+<div class="blog-container">
+  <div class="mobile-category-toggle">
+    <button id="category-toggle" class="category-toggle-button">
+      Категории <span class="toggle-icon">▼</span>
+    </button>
+    <button id="tags-toggle" class="category-toggle-button">
+      Теги <span class="toggle-icon-tags">▼</span>
+    </button>
+  </div>
+  
+  <div class="blog-sidebar" id="blog-sidebar">
+    <div class="sidebar-section">
+      <h3 class="sidebar-heading">Категории</h3>
+      <ul class="category-list">
+        <li>
+          <a href="{{ '/blog/' | relative_url }}" class="category-link category-all active">
+            Все статьи
+            <span class="category-count">{{ site.posts.size }}</span>
+          </a>
+        </li>
+        {% assign categories = site.posts | map: "categories" | compact | uniq | sort %}
+        {% for category in categories %}
+          {% assign encoded_category = category | url_encode %}
+          {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category" %}
+          <li>
+            <a href="{{ '/blog/' | relative_url }}#category-{{ encoded_category }}" class="category-link" data-category="{{ encoded_category }}">
+              {{ category | capitalize }}
+              <span class="category-count">{{ category_posts.size }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="sidebar-section" id="tags-section">
+      <h3 class="sidebar-heading">Теги</h3>
+      <div class="tag-cloud">
+        {% assign tags = site.posts | map: "tags" | compact | uniq | sort %}
+        {% for tag in tags %}
+          {% assign encoded_tag = tag | url_encode %}
+          {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+          <a href="{{ '/blog/' | relative_url }}#tag-{{ encoded_tag }}" class="tag-link" data-tag="{{ encoded_tag }}">
+            {{ tag }}
+            <span class="tag-count">{{ tag_posts.size }}</span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="blog-content">
+    <h2 class="section-heading">{{ page.title }}</h2>
+    <p class="section-description">Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.</p>
+
+    {% if site.posts.size > 0 %}
+      <div id="all-posts-container" class="post-list">
+        {% for post in site.posts %}
+          <div class="post-card" 
+               data-categories="{% for cat in post.categories %}{{ cat | url_encode }} {% endfor %}"
+               data-tags="{% for tag in post.tags %}{{ tag | url_encode }} {% endfor %}">
+            <div class="post-content">
+              <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+              <p class="post-meta">
+                {{ post.date | date: "%d.%m.%Y" }}
+                {% if post.categories != empty %}
+                  &bull; 
+                  {% for category in post.categories %}
+                    {% assign encoded_category = category | url_encode %}
+                    <span class="post-category"><a href="{{ '/blog/' | relative_url }}#category-{{ encoded_category }}">{{ category }}</a></span>
+                    {% unless forloop.last %}, {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </p>
+              <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+              {% if post.tags.size > 0 %}
+                <div class="post-tags">
+                  {% for tag in post.tags %}
+                    {% assign encoded_tag = tag | url_encode %}
+                    <a href="{{ '/blog/' | relative_url }}#tag-{{ encoded_tag }}" class="post-tag">{{ tag }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            <div class="post-actions">
+              <a href="{{ post.url | relative_url }}" class="button">Читать дальше →</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Пока нет записей в блоге.</p>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to filter posts by category or tag
+    function filterPosts() {
+      // Get the category or tag from the URL hash
+      var hash = window.location.hash;
+      if (!hash) {
+        showAllPosts();
+        return;
+      }
+      
+      // Remove the # symbol
+      var filter = hash.substring(1);
+      var isCategory = filter.startsWith('category-');
+      var isTag = filter.startsWith('tag-');
+      
+      if (!isCategory && !isTag) {
+        // For backward compatibility, assume it's a category if no prefix
+        filter = 'category-' + filter;
+        isCategory = true;
+      }
+      
+      if (isCategory) {
+        var category = filter.replace('category-', '');
+        filterByCategory(category);
+      } else if (isTag) {
+        var tag = filter.replace('tag-', '');
+        filterByTag(tag);
+      }
+    }
+    
+    function filterByCategory(category) {
+      // Update active class on category links
+      document.querySelectorAll('.category-link, .tag-link').forEach(function(link) {
+        link.classList.remove('active');
+      });
+      
+      var activeLink = document.querySelector('.category-link[data-category="' + category + '"]');
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+      
+      // Show only posts with the selected category
+      document.querySelectorAll('.post-card').forEach(function(post) {
+        var postCategories = post.getAttribute('data-categories');
+        if (postCategories && postCategories.includes(category)) {
+          post.style.display = '';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+      
+      // Update page title
+      updatePageTitle(activeLink);
+    }
+    
+    function filterByTag(tag) {
+      // Update active class on tag links
+      document.querySelectorAll('.category-link, .tag-link').forEach(function(link) {
+        link.classList.remove('active');
+      });
+      
+      var activeLink = document.querySelector('.tag-link[data-tag="' + tag + '"]');
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+      
+      // Show only posts with the selected tag
+      document.querySelectorAll('.post-card').forEach(function(post) {
+        var postTags = post.getAttribute('data-tags');
+        if (postTags && postTags.includes(tag)) {
+          post.style.display = '';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+      
+      // Update page title
+      updatePageTitle(activeLink);
+    }
+    
+    function showAllPosts() {
+      // Show all posts if no category is selected
+      document.querySelectorAll('.post-card').forEach(function(post) {
+        post.style.display = '';
+      });
+      
+      // Make "All posts" link active
+      document.querySelectorAll('.category-link, .tag-link').forEach(function(link) {
+        link.classList.remove('active');
+      });
+      document.querySelector('.category-all').classList.add('active');
+      
+      // Reset page title
+      document.querySelector('.section-heading').textContent = 'Блог';
+      document.querySelector('.section-description').textContent = 'Здесь я делюсь полезной информацией, советами и методиками по нейропсихологической коррекции развития детей.';
+    }
+    
+    function updatePageTitle(activeLink) {
+      if (activeLink) {
+        var filterName = activeLink.textContent.trim().split('\n')[0].trim();
+        var filterType = activeLink.classList.contains('category-link') ? 'категории' : 'тегу';
+        document.querySelector('.section-heading').textContent = 'Блог: ' + filterName;
+        document.querySelector('.section-description').textContent = 'Статьи по ' + filterType + ' "' + filterName + '"';
+      }
+      
+      // Close mobile category menu after selection on mobile
+      if (window.innerWidth <= 768) {
+        document.getElementById('blog-sidebar').classList.remove('active');
+        document.querySelector('.toggle-icon').textContent = '▼';
+        document.querySelector('.toggle-icon-tags').textContent = '▼';
+      }
+    }
+    
+    // Mobile toggle functionality
+    var categoryToggle = document.getElementById('category-toggle');
+    var tagsToggle = document.getElementById('tags-toggle');
+    var blogSidebar = document.getElementById('blog-sidebar');
+    var tagsSection = document.getElementById('tags-section');
+    
+    categoryToggle.addEventListener('click', function() {
+      blogSidebar.classList.toggle('active');
+      tagsSection.style.display = 'none';
+      var toggleIcon = document.querySelector('.toggle-icon');
+      toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
+    });
+    
+    tagsToggle.addEventListener('click', function() {
+      blogSidebar.classList.toggle('active');
+      if (blogSidebar.classList.contains('active')) {
+        tagsSection.style.display = 'block';
+      } else {
+        tagsSection.style.display = 'none';
+      }
+      var toggleIcon = document.querySelector('.toggle-icon-tags');
+      toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
+    });
+    
+    // Close sidebar when clicking on a category or tag on mobile
+    document.querySelectorAll('.category-link, .tag-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          blogSidebar.classList.remove('active');
+          document.querySelector('.toggle-icon').textContent = '▼';
+          document.querySelector('.toggle-icon-tags').textContent = '▼';
+        }
+      });
+    });
+    
+    // Filter posts on page load
+    filterPosts();
+    
+    // Filter posts when the hash changes
+    window.addEventListener('hashchange', filterPosts);
+  });
+</script>
+
+<style>
+/* Additional styles for tag cloud */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag-link {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  font-size: 0.9em;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.tag-link:hover,
+.tag-link.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tag-count {
+  font-size: 0.8em;
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
+.post-tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.post-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  font-size: 0.8em;
+  color: #555;
+  text-decoration: none;
+}
+
+.post-tag:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  #tags-section {
+    display: none;
+  }
+  
+  .mobile-category-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .category-toggle-button {
+    flex: 1;
+    margin: 0 5px;
+  }
+}
+</style> 

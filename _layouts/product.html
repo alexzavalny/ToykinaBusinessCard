@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="product">
+  <header class="product-header">
+    <h1 class="product-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="product-content">
+    {% if page.image %}
+    <div class="product-image">
+      <img src="{{ page.image }}" alt="{{ page.title }}" />
+    </div>
+    {% endif %}
+
+    <div class="product-description">
+      {{ content }}
+    </div>
+
+</article> 

@@ -218,10 +218,16 @@ permalink: /blog/
     var tagsToggle = document.getElementById('tags-toggle');
     var blogSidebar = document.getElementById('blog-sidebar');
     var tagsSection = document.getElementById('tags-section');
+    var categoriesSection = document.querySelector('.sidebar-section:not(#tags-section)');
     
     categoryToggle.addEventListener('click', function() {
       blogSidebar.classList.toggle('active');
-      tagsSection.style.display = 'none';
+      if (blogSidebar.classList.contains('active')) {
+        categoriesSection.style.display = 'block';
+        tagsSection.style.display = 'none';
+      } else {
+        categoriesSection.style.display = 'none';
+      }
       var toggleIcon = document.querySelector('.toggle-icon');
       toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
     });
@@ -230,6 +236,7 @@ permalink: /blog/
       blogSidebar.classList.toggle('active');
       if (blogSidebar.classList.contains('active')) {
         tagsSection.style.display = 'block';
+        categoriesSection.style.display = 'none';
       } else {
         tagsSection.style.display = 'none';
       }

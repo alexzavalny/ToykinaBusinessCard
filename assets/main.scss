@@ -27,10 +27,16 @@ html {
   background-color: #f8f8f8;
   border-radius: 10px;
   padding: 1.5rem;
-  margin-bottom: 2rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   position: sticky;
   top: 30px;
+}
+
+// Apply margin to sidebar sections only on non-mobile
+@media (min-width: 769px) {
+  .sidebar-section:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
 
 .sidebar-heading {

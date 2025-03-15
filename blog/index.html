@@ -222,6 +222,7 @@ permalink: /blog/
     categoryToggle.addEventListener('click', function() {
       blogSidebar.classList.toggle('active');
       tagsSection.style.display = 'none';
+      document.querySelector('.sidebar-section:first-child').style.display = 'block';
       var toggleIcon = document.querySelector('.toggle-icon');
       toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
     });
@@ -230,6 +231,7 @@ permalink: /blog/
       blogSidebar.classList.toggle('active');
       if (blogSidebar.classList.contains('active')) {
         tagsSection.style.display = 'block';
+        document.querySelector('.sidebar-section:first-child').style.display = 'none';
       } else {
         tagsSection.style.display = 'none';
       }

@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Merriweather:wght@300;400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/assets/main.css">
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4002/feed.xml" title="Ксения Тоечкина - Детский нейропсихолог" />
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4003/feed.xml" title="Ксения Тоечкина - Детский нейропсихолог" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Блог | Ксения Тоечкина - Детский нейропсихолог</title>
 <meta name="generator" content="Jekyll v4.3.4" />
@@ -32,14 +32,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Детский нейропсихолог. Я помогаю родителям детей с различными расстройствами развития сразу начать дома коррекцию развития ребенка не упуская время." />
 <meta property="og:description" content="Детский нейропсихолог. Я помогаю родителям детей с различными расстройствами развития сразу начать дома коррекцию развития ребенка не упуская время." />
-<link rel="canonical" href="http://localhost:4002/blog/" />
-<meta property="og:url" content="http://localhost:4002/blog/" />
+<link rel="canonical" href="http://localhost:4003/blog/" />
+<meta property="og:url" content="http://localhost:4003/blog/" />
 <meta property="og:site_name" content="Ксения Тоечкина - Детский нейропсихолог" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Блог" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Детский нейропсихолог. Я помогаю родителям детей с различными расстройствами развития сразу начать дома коррекцию развития ребенка не упуская время.","headline":"Блог","url":"http://localhost:4002/blog/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Детский нейропсихолог. Я помогаю родителям детей с различными расстройствами развития сразу начать дома коррекцию развития ребенка не упуская время.","headline":"Блог","url":"http://localhost:4003/blog/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -152,7 +152,7 @@
                data-categories="%D0%90%D1%83%D1%82%D0%B8%D0%B7%D0%BC "
                data-tags="%D0%B0%D1%83%D1%82%D0%B8%D0%B7%D0%BC %D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B2%D0%BA%D0%B8 %D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F ">
             <div class="post-content">
-              <h3 class="post-title"><a href="/blog/2025/03/15/vyzyvayut-li-privivki-autizm/">Вызывают ли прививки аутизм?</a></h3>
+              <h3 class="post-title"><a href="/blog/2025/03/15/vyzyvayut-li-privivki-autizm/">Вызывают ли прививки аутизм у детей?</a></h3>
               <p class="post-meta">
                 15.03.2025
                 
@@ -346,6 +346,7 @@
     categoryToggle.addEventListener('click', function() {
       blogSidebar.classList.toggle('active');
       tagsSection.style.display = 'none';
+      document.querySelector('.sidebar-section:first-child').style.display = 'block';
       var toggleIcon = document.querySelector('.toggle-icon');
       toggleIcon.textContent = blogSidebar.classList.contains('active') ? '▲' : '▼';
     });
@@ -354,6 +355,7 @@
       blogSidebar.classList.toggle('active');
       if (blogSidebar.classList.contains('active')) {
         tagsSection.style.display = 'block';
+        document.querySelector('.sidebar-section:first-child').style.display = 'none';
       } else {
         tagsSection.style.display = 'none';
       }

@@ -4,7 +4,7 @@ title: "Базовый курс по коррекции детей с задер
 image: "/img/course.jpg"
 price: "19€"
 button_url: "https://t.me/ToykinaCourseBot"
-button_text: "Открыть курс"
+button_text: "Купить курс"
 ---
 
 <style>
@@ -214,5 +214,12 @@ button_text: "Открыть курс"
 </div>
 
 <p>После оплаты вы получите код доступа к курсу.</p>
+
+<div class="cta-section">
+  <h2>Начните коррекцию вашего ребенка уже сегодня!</h2>
+  <p class="price-tag">Всего за 19€</p>
+  <a href="https://buy.stripe.com/9AQaHE3Ok17pahW7sy" class="cta-button">Купить книгу</a>
+</div>
+
 
 </div> 

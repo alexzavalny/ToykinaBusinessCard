@@ -115,6 +115,42 @@ button_text: "Купить курс"
   color: white;
 }
 
+
+.cta-section {
+  text-align: center;
+  background-color: #00a09c;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px 0 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  background-color: white;
+  color: #00a09c;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.price-tag {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+@media (max-w
+
 @media (max-width: 768px) {
   .topic-card {
     max-width: 100%;
@@ -218,7 +254,7 @@ button_text: "Купить курс"
 <div class="cta-section">
   <h2>Начните коррекцию вашего ребенка уже сегодня!</h2>
   <p class="price-tag">Всего за 19€</p>
-  <a href="https://buy.stripe.com/9AQaHE3Ok17pahW7sy" class="cta-button">Купить книгу</a>
+  <a href="https://t.me/ToykinaCourseBot" class="cta-button">Перейти в курс</a>
 </div>
 
 

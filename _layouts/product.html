@@ -17,4 +17,10 @@ layout: default
       {{ content }}
     </div>
 
+    {% if page.button_text and page.button_url %}
+    <div class="product-button">
+      <a href="{{ page.button_url }}" class="button">{{ page.button_text }}</a>
+    </div>
+    {% endif %}
+
 </article> 

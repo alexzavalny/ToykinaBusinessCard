@@ -548,9 +548,9 @@ mark {
 
 .post-count {
     display: inline-block;
-    background-color: #f44336;
+    background-color: #b1b1b1;
     color: white;
-    border-radius: 50%;
+    border-radius: 15px;
     padding: 2px 6px;
     font-size: 12px;
     margin-left: 5px;

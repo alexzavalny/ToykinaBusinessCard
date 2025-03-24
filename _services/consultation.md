@@ -1,6 +1,6 @@
 ---
 layout: service
-title: Консультации
+title: Онлайн-консультации
 ---
 
 <style>

@@ -80,8 +80,13 @@ layout: default
   <div class="post-list">
     {% for post in site.posts limit:3 %}
       <div class="post-card">
+        {% if post.hero_image %}
+        <div class="post-card-hero">
+          <img src="{{ post.hero_image | relative_url }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
         <div class="post-content">
-          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
           <p class="post-meta">{{ post.date | date: "%d.%m.%Y" }}</p>
           <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
           <a href="{{ post.url | relative_url }}" class="read-more">Читать дальше →</a>

@@ -1,6 +1,7 @@
 ---
 layout: service
 title: Онлайн-консультации
+logo: /img/logo-teach.jpg
 ---
 
 <style>

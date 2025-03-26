@@ -2,6 +2,7 @@
 layout: page
 title: Контакты
 permalink: /contacts/
+logo: /img/logo-contact.jpg
 ---
 
 <style>

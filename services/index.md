@@ -2,6 +2,7 @@
 layout: page
 title: Услуги
 permalink: /services/
+logo: /img/logo-teach.jpg
 ---
 
 <div class="services-container">

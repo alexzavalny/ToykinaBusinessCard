@@ -1,6 +1,7 @@
 ---
 layout: service
 title: Онлайн-кураторство
+logo: /img/logo-teach.jpg
 ---
 
 <style>

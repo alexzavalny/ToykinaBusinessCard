@@ -2,6 +2,7 @@
 layout: page
 title: Обо мне
 permalink: /about-me/
+logo: /img/logo-hi.jpg
 ---
 
 <style>

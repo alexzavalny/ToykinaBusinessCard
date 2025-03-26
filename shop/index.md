@@ -2,6 +2,7 @@
 layout: page
 title: Магазин
 permalink: /shop/
+logo: /img/logo-shop.jpg
 ---
 
 <style>

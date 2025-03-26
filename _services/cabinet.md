@@ -14,6 +14,7 @@ images:
     alt: Кабинет 5
   - src: /img/cabinet/cabinet6.jpg
     alt: Кабинет 6
+logo: /img/logo-teach.jpg
 ---
 
 <style>

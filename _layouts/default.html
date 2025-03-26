@@ -31,7 +31,7 @@
     <header class="site-header">
       <div class="logo-container">
         <a href="{{ "/" | relative_url }}">
-          <img class="logo" loading="lazy" src="/img/logo.jpg" alt="Логотип Ксении Тоечкиной" />
+          <img class="logo" loading="lazy" src="{{ page.logo | default: '/img/logo.jpg' }}" alt="Логотип Ксении Тоечкиной" />
         </a>
       </div>
       <div class="hamburger-menu">

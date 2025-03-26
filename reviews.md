@@ -2,6 +2,7 @@
 layout: page
 title: Отзывы
 permalink: /reviews/
+logo: /img/logo-thanks.jpg
 ---
 
 <div class="reviews-container">

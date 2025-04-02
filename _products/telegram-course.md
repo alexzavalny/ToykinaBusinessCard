@@ -2,7 +2,7 @@
 layout: product
 title: "Базовый курс по коррекции детей с задержками и аутизмом"
 image: "/img/course.jpg"
-price: "19€"
+price: "9.5€"
 button_url: "https://t.me/ToykinaCourseBot"
 button_text: "Купить курс"
 ---
@@ -12,6 +12,24 @@ button_text: "Купить курс"
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.discount-banner {
+  background-color: #FF4E50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
 }
 
 .section-title {
@@ -160,6 +178,10 @@ button_text: "Купить курс"
 
 <div class="course-container">
 
+<div class="discount-banner">
+  Сегодня действует 50% скидка
+</div>
+
 <div class="course-intro">
   <p>Добро пожаловать на мой базовый курс по коррекции детей с задержками развития и аутизмом! 
   Этот курс создан специально для родителей, которые хотят <strong>начать коррекцию прямо сейчас</strong>, 
@@ -253,7 +275,7 @@ button_text: "Купить курс"
 
 <div class="cta-section">
   <h2>Начните коррекцию вашего ребенка уже сегодня!</h2>
-  <p class="price-tag">Всего за 19€</p>
+  <p class="price-tag">Всего за 9.5€ <span style="text-decoration: line-through;">19€</span></p>
   <a href="https://t.me/ToykinaCourseBot" class="cta-button">Перейти в курс</a>
 </div>
 

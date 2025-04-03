@@ -3,7 +3,7 @@ layout: product
 title: "Базовый курс по коррекции детей с задержками и аутизмом"
 image: "/img/course.jpg"
 price: "19€"
-button_url: "https://t.me/ToykinaCourseBot"
+button_url: "https://buy.stripe.com/eVa2b8esYcQ775KaEM"
 button_text: "Купить курс"
 ---
 

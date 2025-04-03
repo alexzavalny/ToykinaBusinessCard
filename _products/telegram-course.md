@@ -2,7 +2,7 @@
 layout: product
 title: "Базовый курс по коррекции детей с задержками и аутизмом"
 image: "/img/course.jpg"
-price: "12€"
+price: "19€"
 button_url: "https://t.me/ToykinaCourseBot"
 button_text: "Купить курс"
 ---
@@ -178,9 +178,9 @@ button_text: "Купить курс"
 
 <div class="course-container">
 
-<div class="discount-banner">
+<!-- <div class="discount-banner">
   Сегодня действует скидка 35%
-</div>
+</div> -->
 
 <div class="course-intro">
   <p>Добро пожаловать на мой базовый курс по коррекции детей с задержками развития и аутизмом! 
@@ -275,7 +275,7 @@ button_text: "Купить курс"
 
 <div class="cta-section">
   <h2>Начните коррекцию вашего ребенка уже сегодня!</h2>
-  <p class="price-tag">Всего за 12€ <span style="text-decoration: line-through;">19€</span></p>
+  <p class="price-tag">Всего за 19€ <span style="text-decoration: line-through;">19€</span></p>
   <a href="https://t.me/ToykinaCourseBot" class="cta-button">Перейти в курс</a>
 </div>
 

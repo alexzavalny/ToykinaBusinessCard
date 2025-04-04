@@ -138,10 +138,28 @@ logo: /img/logo-hi.jpg
   transition: transform 0.3s ease;
   max-width: 200px;
   cursor: pointer;
+  transform: rotate(var(--rotation));
+}
+
+.diploma-item:nth-child(1) {
+  --rotation: -3deg;
+}
+
+.diploma-item:nth-child(2) {
+  --rotation: 2deg;
+}
+
+.diploma-item:nth-child(3) {
+  --rotation: -1deg;
+}
+
+.diploma-item:nth-child(4) {
+  --rotation: 3deg;
 }
 
 .diploma-item:hover {
-  transform: translateY(-5px);
+  transform: rotate(0deg) scale(1.05);
+  z-index: 1;
 }
 
 .diploma-item img {

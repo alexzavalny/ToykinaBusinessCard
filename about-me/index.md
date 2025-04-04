@@ -125,20 +125,45 @@ logo: /img/logo-hi.jpg
   gap: 20px;
   justify-content: center;
   padding: 20px;
-  background: #e8e8e8;
+  background: url('/img/desk.png');
+  background-size: cover;
+  background-position: center;
   border-radius: 8px;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.2),
+    inset 0 0 20px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.diplomas-shelf::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.2) 100%
+  );
+  pointer-events: none;
 }
 
 .diploma-item {
   background: white;
   padding: 10px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.2),
+    0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 200px;
   cursor: pointer;
   transform: rotate(var(--rotation));
+  position: relative;
+  z-index: 0;
 }
 
 .diploma-item:nth-child(1) {
@@ -160,6 +185,9 @@ logo: /img/logo-hi.jpg
 .diploma-item:hover {
   transform: rotate(0deg) scale(1.05);
   z-index: 1;
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.3),
+    0 8px 16px rgba(0,0,0,0.2);
 }
 
 .diploma-item img {

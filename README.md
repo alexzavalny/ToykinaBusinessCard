@@ -60,7 +60,7 @@ layout: post
 title: "Заголовок записи"
 date: YYYY-MM-DD HH:MM:SS +0300
 categories: категория1 категория2
-hero_image: /img/hero/image-name.jpg
+image: /img/hero/image-name.jpg
 ---
 
 Содержание записи в формате Markdown.
@@ -71,13 +71,13 @@ hero_image: /img/hero/image-name.jpg
 Для добавления главных (hero) изображений к записям:
 
 1. Разместите изображение в папке `img/hero/`
-2. Добавьте параметр `hero_image` в YAML-разметку записи:
+2. Добавьте параметр `image` в YAML-разметку записи:
 
 ```markdown
 ---
 layout: post
 title: "Заголовок записи"
-hero_image: /img/hero/image-name.jpg
+image: /img/hero/image-name.jpg
 ---
 ```
 

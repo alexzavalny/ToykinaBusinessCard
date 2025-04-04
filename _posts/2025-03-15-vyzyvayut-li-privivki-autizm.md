@@ -4,7 +4,7 @@ title: "Вызывают ли прививки аутизм у детей?"
 date: 2025-03-15
 categories: [Аутизм]
 tags: [аутизм, прививки, исследования]
-hero_image: img/hero/privivki.jpeg
+image: img/hero/privivki.jpeg
 description: "Разберем научные исследования о связи прививок и аутизма, развеем мифы и предоставим достоверную информацию для родителей."
 logo: /img/logo-blog.jpg
 ---

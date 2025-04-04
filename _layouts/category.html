@@ -45,9 +45,9 @@ layout: page
       <div id="all-posts-container" class="post-list">
         {% for post in filtered_posts %}
           <div class="post-card" data-categories="{% for cat in post.categories %}{{ cat | url_encode }} {% endfor %}">
-            {% if post.hero_image %}
+            {% if post.image %}
             <div class="post-card-hero">
-              <img src="{{ post.hero_image | relative_url }}" alt="{{ post.title }}">
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
             </div>
             {% endif %}
             <div class="post-content">

@@ -4,7 +4,7 @@ title: "Почему дети с аутизмом делают 'крылышки
 date: 2025-03-24
 categories: [Аутизм]
 tags: [крылышки, флаппинг]
-hero_image: img/hero/flapping.jpeg
+image: img/hero/flapping.jpeg
 description: "Разберем, что такое флаппинг или 'крылышки' у детей с аутизмом, почему это происходит и как правильно реагировать на такое поведение."
 logo: /img/logo-blog.jpg
 ---

@@ -4,7 +4,7 @@ title: "Мой ребенок не откликается на имя, есть 
 date: 2025-03-28
 categories: [Развитие ребенка]
 tags: [развитие, аутизм, СДВГ]
-hero_image: img/hero/child-name-response.jpeg
+image: img/hero/child-name-response.jpeg
 description: "Разберем причины, почему ребенок может не откликаться на имя, и когда стоит обратиться к специалисту."
 logo: /img/logo-blog.jpg
 ---

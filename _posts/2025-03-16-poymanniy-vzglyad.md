@@ -4,7 +4,7 @@ title: "Пойманный взгляд"
 date: 2025-03-16
 categories: [Аутизм]
 tags: [зрительный контакт]
-hero_image: img/hero/poymanni_vzgljad.jpeg
+image: img/hero/poymanni_vzgljad.jpeg
 description: "Узнайте о важности зрительного контакта в развитии ребенка, как его развивать и на что обратить внимание в поведении малыша."
 logo: /img/logo-blog.jpg
 ---

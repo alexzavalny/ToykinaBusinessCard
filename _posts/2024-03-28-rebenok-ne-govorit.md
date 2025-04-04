@@ -4,7 +4,7 @@ title: "С чего начать, если ребенок не говорит?"
 date: 2025-03-30
 categories: [Развитие речи]
 tags: [развитие, аутизм, речь, обучение]
-hero_image: img/hero/child-speech.jpeg
+image: img/hero/child-speech.jpeg
 description: "Простой и эффективный метод запуска речи"
 logo: /img/logo-blog.jpg
 ---

@@ -4,7 +4,7 @@ title: "Три вида указательного жеста у детей"
 date: 2025-03-15
 categories: [Аутизм]
 tags: [указательный жест]
-hero_image: img/hero/ukazatelnij_zhest.jpeg
+image: img/hero/ukazatelnij_zhest.jpeg
 description: "Разберем три основных вида указательного жеста у детей: что они означают, как их различать и на что обратить внимание в развитии ребенка."
 logo: /img/logo-blog.jpg
 ---

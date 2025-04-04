@@ -112,6 +112,89 @@ logo: /img/logo-hi.jpg
   border-bottom: 1px solid #eee;
 }
 
+.diplomas-section {
+  margin: 40px 0;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+
+.diplomas-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background: #e8e8e8;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.diploma-item {
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.diploma-item:hover {
+  transform: translateY(-5px);
+}
+
+.diploma-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.diploma-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
 .contact-section {
   background-color: #00a09c;
   color: white;
@@ -217,6 +300,54 @@ logo: /img/logo-hi.jpg
   <dt>Как происходит оплата консультации?</dt>
   <dd>Оплатить можно MasterCard, Visa карточками, а так же через PayPal. Оплата происходит через платежную систему Stripe. Stripe это одна из самых популярных платежных систем в мире, используется на миллионах сайтов. Она позволяет оплачивать услуги и товары, не передавай данные о карточке получателю средств.</dd>
 </dl>
+
+<h2 class="section-title">Мои дипломы и сертификаты</h2>
+
+<div class="diplomas-section">
+  <div class="diplomas-shelf">
+    <div class="diploma-item" onclick="openLightbox(this)">
+      <img src="/img/diploma/aba_v1.jpg" alt="Сертификат ABA терапии" loading="lazy">
+      <div class="diploma-title">Первый курс ABA Юлии Эрц</div>
+    </div>
+    <div class="diploma-item" onclick="openLightbox(this)">
+      <img src="/img/diploma/aba_v2.jpg" alt="Сертификат ABA терапии" loading="lazy">
+      <div class="diploma-title">Второй курс ABA Юлии Эрц</div>
+    </div>
+    <div class="diploma-item" onclick="openLightbox(this)">
+      <img src="/img/diploma/montessori.jpeg" alt="Сертификат Монтессори-педагога" loading="lazy">
+      <div class="diploma-title">Сертификат Монтессори-педагога</div>
+    </div>
+    <div class="diploma-item" onclick="openLightbox(this)">
+      <img src="/img/diploma/neyropsihologija.jpg" alt="Сертификат нейропсихолога" loading="lazy">
+      <div class="diploma-title">Сертификат нейропсихолога</div>
+    </div>
+  </div>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" class="lightbox-content">
+</div>
+
+<script>
+function openLightbox(element) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  lightboxImg.src = element.querySelector("img").src;
+  lightbox.style.display = "block";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+// Close lightbox when pressing Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});
+</script>
 
 <div class="contact-section">
   <h2>Свяжитесь со мной</h2>

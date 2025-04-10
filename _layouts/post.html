@@ -33,4 +33,32 @@ layout: default
     {% endif %}
   </div>
   {% endif %}
+
+  {% assign course_id = "/products/telegram-course/" %}
+  {% assign course = site.products | where: "url", course_id | first %}
+
+  {% if course %}
+    <section class="course-promo" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+      <h3 style="color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px;">Готовы заниматься с ребенком дома?</h3>
+      <div style="display: flex; align-items: flex-start; gap: 20px; margin-top: 15px;">
+        {% if course.image %}
+          <div style="flex-shrink: 0;">
+             <a href="{{ course.url | relative_url }}">
+               <img src="{{ course.image | relative_url }}" alt="{{ course.title }}" style="width: 150px; height: auto; border-radius: 8px; display: block;">
+             </a>
+          </div>
+        {% endif %}
+        <div style="flex-grow: 1;">
+          <h4><a href="{{ course.url | relative_url }}" style="color: #00a09c; text-decoration: none;">{{ course.title }}</a></h4>
+          <p style="font-size: 0.9em; color: #555;">Практические методики для родителей детей с задержками развития и аутизмом. Начните коррекцию прямо сейчас!</p>
+          <a href="{{ course.url | relative_url }}" class="cta-button" style="display: inline-block; margin-top: 10px; margin-right: 10px; padding: 10px 25px; background-color: white; color: #00a09c; border: 2px solid #00a09c; font-weight: bold; text-decoration: none; border-radius: 30px; transition: all 0.3s ease; font-size: 16px;">
+            Подробнее
+          </a>
+          <a href="{{ course.button_url }}" target="_blank" class="cta-button" style="display: inline-block; margin-top: 10px; padding: 10px 25px; background-color: #00a09c; color: white; font-weight: bold; text-decoration: none; border-radius: 30px; transition: all 0.3s ease; font-size: 16px;">
+            {{ course.button_text | default: "Купить курс" }}
+          </a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
 </article> 

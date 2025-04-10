@@ -5,6 +5,7 @@ image: "/img/book.jpg"
 price: "24.99€"
 button_url: "https://buy.stripe.com/9AQaHE3Ok17pahW7sy"
 button_text: "Купить книгу"
+excerpt: "Более 70 идей для игр с детьми от 0 до 7 лет. Развивайте детей весело и полезно!"
 features:
   - title: "Для самых маленьких"
     description: "Игры для детей от 0 до 1 года, которые развивают сенсорику и моторику с самого раннего возраста."

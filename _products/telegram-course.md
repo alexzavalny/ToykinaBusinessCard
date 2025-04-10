@@ -5,6 +5,7 @@ image: "/img/course.jpg"
 price: "19€"
 button_url: "https://buy.stripe.com/eVa2b8esYcQ775KaEM"
 button_text: "Купить курс"
+excerpt: "Базовый курс для родителей по коррекции детей с задержками развития и аутизмом. Начните коррекцию прямо сейчас, не ожидая специалистов."
 ---
 
 <style>

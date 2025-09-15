@@ -43,7 +43,7 @@
         <a href="{{ "/" | relative_url }}">Главная</a>
         <a href="{{ "/about-me/" | relative_url }}">Обо мне</a>
         <a href="{{ "/services/" | relative_url }}">Услуги</a>
-        <a href="{{ "/shop/" | relative_url }}">Магазин</a>
+        <a href="{{ "/shop/" | relative_url }}">Магазин <span class="post-count">{{ site.products.size }}</span></a>
         <a href="{{ "/blog/" | relative_url }}">Блог <span class="post-count">{{ site.posts.size }}</span></a>
         <a href="{{ "/reviews/" | relative_url }}">Отзывы</a>
         <a href="{{ "/contacts/" | relative_url }}">Контакты</a>

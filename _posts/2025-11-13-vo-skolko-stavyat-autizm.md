@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Во сколько ставят аутизм?"
-date: 2025-04-12
+date: 2025-11-13
 categories: [Аутизм]
 tags: [диагностика, раннее вмешательство, РАС]
 image: img/hero/vozrast.jpeg

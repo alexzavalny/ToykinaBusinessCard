@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ребенок не играет с игрушками - это аутизм?"
-date: 2025-04-11
+date: 2025-11-17
 categories: [Аутизм, Развитие]
 tags: [игрушки, диагностика, поведение]
 image: img/hero/toys-playing.jpeg

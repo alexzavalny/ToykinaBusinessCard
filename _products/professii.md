@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Игра 'ПРОФЕССИИ'"
+category: "Игры"
 image: "/img/Professii.png"
 price: "4.99€"
 button_url: "#"

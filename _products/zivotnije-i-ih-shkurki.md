@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Игра 'ЖИВОТНЫЕ И ИХ ШКУРКИ'"
+category: "Игры"
 image: "/img/Zivotnije i ih shkurki.png"
 price: "2.99€"
 button_url: "#"

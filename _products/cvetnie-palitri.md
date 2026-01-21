@@ -1,9 +1,10 @@
 ---
 layout: product
 title: "Игра 'ЦВЕТНЫЕ ПАЛИТРЫ'"
+category: "Игры"
 image: "/img/Cvetnie palitri.png"
 price: "4.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/4gM8wRaUD0I744S2AW1wY0a"
 button_text: "Купить игру"
 excerpt: "Сенсорный развивающий материал для развития зрительного восприятия и способности работать с цветом."
 features:

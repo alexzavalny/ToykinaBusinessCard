@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Игра 'ГУСЕНИЦА'"
+category: "Игры"
 image: "/img/Gusenica - rabota po sheme.png"
 price: "2.99€"
 button_url: "#"

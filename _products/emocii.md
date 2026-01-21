@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Игра 'ЭМОЦИИ'"
+category: "Игры"
 image: "/img/Emocii.png"
 price: "4.99€"
 button_url: "#"

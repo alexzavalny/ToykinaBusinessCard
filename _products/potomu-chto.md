@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Пособие 'ПОТОМУ ЧТО'"
+category: "Пособия"
 image: "/img/Potomu chto.png"
 price: "4.99€"
 button_url: "#"

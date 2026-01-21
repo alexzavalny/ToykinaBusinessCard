@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Игротека"
+category: "Книги"
 image: "/img/book.jpg"
 price: "24.99€"
 button_url: "https://buy.stripe.com/9AQaHE3Ok17pahW7sy"

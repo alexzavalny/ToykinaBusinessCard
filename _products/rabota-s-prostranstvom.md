@@ -1,6 +1,7 @@
 ---
 layout: product
 title: "Работа с пространством"
+category: "Пособия"
 image: "/img/Rabota s prostransvom.png"
 price: "2.99€"
 button_url: "#"

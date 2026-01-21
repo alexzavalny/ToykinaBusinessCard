@@ -4,7 +4,7 @@ title: "Игра 'ЖИВОТНЫЕ И ИХ ШКУРКИ'"
 category: "Игры"
 image: "/img/Zivotnije i ih shkurki.png"
 price: "2.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/14A00laUDeyX0SGfnI1wY0g"
 button_text: "Купить игру"
 excerpt: "Сенсорный развивающий материал для улучшения зрительного восприятия, концентрации и внимания к деталям."
 features:

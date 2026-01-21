@@ -4,7 +4,7 @@ title: "Игра 'ПРОФЕССИИ'"
 category: "Игры"
 image: "/img/Professii.png"
 price: "4.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/6oU7sN9QzduT58WdfA1wY0e"
 button_text: "Купить игру"
 excerpt: "Игра для изучения основных человеческих профессий. Помогает детям понять, что делают люди и какие инструменты используют в работе."
 features:

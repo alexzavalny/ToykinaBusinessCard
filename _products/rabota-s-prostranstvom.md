@@ -4,7 +4,7 @@ title: "Работа с пространством"
 category: "Пособия"
 image: "/img/Rabota s prostransvom.png"
 price: "2.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/3cIcN75Aj1Mb8l8ejE1wY0f"
 button_text: "Купить материал"
 excerpt: "Материал для введения первых основ математики. Учит детей ориентироваться в двумерном пространстве и сравнивать объекты."
 features:

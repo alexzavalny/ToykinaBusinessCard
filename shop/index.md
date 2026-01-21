@@ -323,6 +323,17 @@ logo: /img/logo-shop.jpg
               </a>
             </li>
           {% endfor %}
+          {% assign no_link_products = site.products | where: "button_url", "#" %}
+          {% assign no_link_count = no_link_products | size %}
+          {% if no_link_count > 0 %}
+            {% assign no_link_encoded = "Без ссылки" | url_encode %}
+            <li>
+              <a href="{{ '/shop/' | relative_url }}#category-{{ no_link_encoded }}" class="shop-category-link" data-category="{{ no_link_encoded }}" data-label="Без ссылки">
+                Без ссылки
+                <span class="category-count">{{ no_link_count }}</span>
+              </a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </aside>
@@ -333,7 +344,14 @@ logo: /img/logo-shop.jpg
 
       <div class="products-grid">
         {% for product in site.products %}
-          <div class="product-card" data-category="{{ product.category | default: 'Прочее' | url_encode }}">
+          {% assign product_category = product.category | default: 'Прочее' %}
+          {% assign encoded_product_category = product_category | url_encode %}
+          {% assign card_categories = encoded_product_category %}
+          {% if product.button_url == '#' %}
+            {% assign encoded_no_link_category = 'Без ссылки' | url_encode %}
+            {% assign card_categories = card_categories | append: ' ' | append: encoded_no_link_category %}
+          {% endif %}
+          <div class="product-card" data-category="{{ encoded_product_category }}" data-categories="{{ card_categories | strip }}">
             {% if product.image %}
             <div class="product-image-container">
               <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image">
@@ -404,8 +422,9 @@ logo: /img/logo-shop.jpg
 
     function filterCategory(category) {
       productCards.forEach(function(card) {
-        var cardCategory = card.getAttribute('data-category');
-        if (category === 'all' || cardCategory === category) {
+        var cardCategories = card.getAttribute('data-categories') || card.getAttribute('data-category') || '';
+        var categoriesList = cardCategories.split(/\s+/).filter(Boolean);
+        if (category === 'all' || categoriesList.indexOf(category) !== -1) {
           card.style.display = '';
         } else {
           card.style.display = 'none';

@@ -4,7 +4,7 @@ title: "Игра 'ГУСЕНИЦА'"
 category: "Игры"
 image: "/img/Gusenica - rabota po sheme.png"
 price: "2.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/eVq28taUD3Uj30O8Zk1wY0c"
 button_text: "Купить игру"
 excerpt: "Игра для обучения детей работать по схеме. Развивает логическое мышление и способность следовать инструкциям."
 features:

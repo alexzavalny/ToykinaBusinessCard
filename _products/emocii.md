@@ -4,7 +4,7 @@ title: "Игра 'ЭМОЦИИ'"
 category: "Игры"
 image: "/img/Emocii.png"
 price: "4.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/00wdRbaUD2QfdFs6Rc1wY0b"
 button_text: "Купить игру"
 excerpt: "Игра для обучения детей различать различные человеческие эмоции. Развивает эмоциональный интеллект и социальные навыки."
 features:

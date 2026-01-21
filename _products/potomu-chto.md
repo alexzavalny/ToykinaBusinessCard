@@ -4,7 +4,7 @@ title: "Пособие 'ПОТОМУ ЧТО'"
 category: "Пособия"
 image: "/img/Potomu chto.png"
 price: "4.99€"
-button_url: "#"
+button_url: "https://buy.stripe.com/14A4gBe6P76v58W4J41wY0d"
 button_text: "Купить пособие"
 excerpt: "Развивающее пособие с 20 примерами для обучения детей отвечать на вопрос 'ПОЧЕМУ?'. Учит понимать причинно-следственные связи."
 features:
